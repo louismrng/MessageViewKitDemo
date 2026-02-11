@@ -1,0 +1,88 @@
+//
+// EmptyInboxView.swift
+// ChatList
+//
+// SwiftUI view for the empty inbox state
+//
+
+import SwiftUI
+
+// MARK: - Empty Inbox View
+
+/// View shown when there are no threads to display.
+public struct EmptyInboxView: View {
+    @Environment(\.chatListStyle) private var style
+
+    let isFiltered: Bool
+    let onClearFilter: (() -> Void)?
+
+    public init(isFiltered: Bool = false, onClearFilter: (() -> Void)? = nil) {
+        self.isFiltered = isFiltered
+        self.onClearFilter = onClearFilter
+    }
+
+    public var body: some View {
+        VStack(spacing: 16) {
+            Spacer()
+
+            Image(systemName: iconName)
+                .font(.system(size: 64))
+                .foregroundColor(style.secondaryTextColor.opacity(0.5))
+
+            Text(title)
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundColor(style.primaryTextColor)
+
+            Text(subtitle)
+                .font(.body)
+                .foregroundColor(style.secondaryTextColor)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 32)
+
+            if isFiltered, let onClearFilter = onClearFilter {
+                Button(action: onClearFilter) {
+                    Text("Clear Filter")
+                        .font(.body)
+                        .fontWeight(.medium)
+                        .foregroundColor(style.accentColor)
+                }
+                .padding(.top, 8)
+            }
+
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(style.backgroundColor)
+    }
+
+    private var iconName: String {
+        isFiltered ? "line.3.horizontal.decrease.circle" : "bubble.left.and.bubble.right"
+    }
+
+    private var title: String {
+        isFiltered ? "No Results" : "No Conversations"
+    }
+
+    private var subtitle: String {
+        if isFiltered {
+            return "No conversations match your current filter."
+        } else {
+            return "Start a new conversation to see it here."
+        }
+    }
+}
+
+// MARK: - Preview
+
+#Preview("Empty Inbox") {
+    EmptyInboxView()
+        .chatListStyle(.default)
+}
+
+#Preview("Filtered Empty") {
+    EmptyInboxView(isFiltered: true) {
+        print("Clear filter tapped")
+    }
+    .chatListStyle(.default)
+}
