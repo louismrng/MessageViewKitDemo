@@ -17,17 +17,17 @@ struct StoragePlaceholderView: View {
                     .font(.system(size: 48))
                     .foregroundColor(.secondary)
 
-                Text("Storage")
+                Text("tab.storage")
                     .font(.title2)
                     .foregroundColor(.primary)
 
-                Text("Coming Soon")
+                Text("placeholder.coming_soon")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(uiColor: .systemBackground))
-            .navigationTitle("Storage")
+            .navigationTitle("tab.storage")
         }
     }
 }

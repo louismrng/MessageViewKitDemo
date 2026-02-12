@@ -40,10 +40,10 @@ struct ConversationView: View {
                     }
                 }
             }
-            .alert("Thread Info", isPresented: $showingInfo) {
-                Button("OK", role: .cancel) { }
+            .alert("conversation.thread_info", isPresented: $showingInfo) {
+                Button("common.ok", role: .cancel) { }
             } message: {
-                Text("Thread ID: \(threadId)\nName: \(threadName)\nMessages: \(viewModel.messages.count)")
+                Text(String(localized: "conversation.thread_info_detail", defaultValue: "Thread ID: \(threadId)\nName: \(threadName)\nMessages: \(viewModel.messages.count)"))
             }
             .modifier(PreiOS26TabBarHiddenModifier())
             .onAppear {

@@ -23,7 +23,7 @@ public struct FilterControl: View {
 
     public var body: some View {
         HStack(spacing: 12) {
-            filterButton(mode: .none, label: "All")
+            filterButton(mode: .none, label: String(localized: "chat_list.filter.all"))
             filterButton(mode: .unread, label: unreadLabel)
         }
         .padding(.horizontal, 16)
@@ -54,9 +54,9 @@ public struct FilterControl: View {
 
     private var unreadLabel: String {
         if unreadCount > 0 {
-            return "Unread (\(unreadCount))"
+            return String(localized: "chat_list.filter.unread_count", defaultValue: "Unread (\(unreadCount))")
         } else {
-            return "Unread"
+            return String(localized: "chat_list.filter.unread")
         }
     }
 }

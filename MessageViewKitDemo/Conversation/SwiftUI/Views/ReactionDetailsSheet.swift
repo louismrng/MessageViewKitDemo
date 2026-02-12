@@ -55,11 +55,11 @@ public struct ReactionDetailsSheet: View {
                 // Reactors list
                 reactorsList
             }
-            .navigationTitle("Reactions")
+            .navigationTitle("conversation.reactions_title")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Done") {
+                    Button("common.done") {
                         onDismiss()
                     }
                 }
@@ -127,11 +127,11 @@ public struct ReactionDetailsSheet: View {
 
                     // Name
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(reaction.reactorDisplayName ?? "Unknown")
+                        Text(reaction.reactorDisplayName ?? String(localized: "conversation.reaction.unknown"))
                             .font(.body)
 
                         if reaction.reactorId == currentUserId {
-                            Text("You")
+                            Text("conversation.reaction.you")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
@@ -144,7 +144,7 @@ public struct ReactionDetailsSheet: View {
                         Button(role: .destructive) {
                             onRemoveReaction(reaction)
                         } label: {
-                            Text("Remove")
+                            Text("conversation.reaction.remove")
                                 .font(.subheadline)
                         }
                     }

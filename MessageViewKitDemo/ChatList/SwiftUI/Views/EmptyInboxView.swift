@@ -42,7 +42,7 @@ public struct EmptyInboxView: View {
 
             if isFiltered, let onClearFilter = onClearFilter {
                 Button(action: onClearFilter) {
-                    Text("Clear Filter")
+                    Text("chat_list.empty.clear_filter")
                         .font(.body)
                         .fontWeight(.medium)
                         .foregroundColor(style.accentColor)
@@ -61,14 +61,16 @@ public struct EmptyInboxView: View {
     }
 
     private var title: String {
-        isFiltered ? "No Results" : "No Conversations"
+        isFiltered
+            ? String(localized: "chat_list.empty.no_results")
+            : String(localized: "chat_list.empty.no_conversations")
     }
 
     private var subtitle: String {
         if isFiltered {
-            return "No conversations match your current filter."
+            return String(localized: "chat_list.empty.filter_subtitle")
         } else {
-            return "Start a new conversation to see it here."
+            return String(localized: "chat_list.empty.default_subtitle")
         }
     }
 }

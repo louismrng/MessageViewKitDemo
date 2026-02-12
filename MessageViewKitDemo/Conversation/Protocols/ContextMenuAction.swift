@@ -23,12 +23,12 @@ public enum ContextMenuAction: String, CaseIterable, Identifiable {
     /// Display title for the action
     public var title: String {
         switch self {
-        case .reply: return "Reply"
-        case .forward: return "Forward"
-        case .copy: return "Copy"
-        case .select: return "Select"
-        case .info: return "Info"
-        case .delete: return "Delete"
+        case .reply: return String(localized: "context_menu.reply")
+        case .forward: return String(localized: "context_menu.forward")
+        case .copy: return String(localized: "context_menu.copy")
+        case .select: return String(localized: "context_menu.select")
+        case .info: return String(localized: "context_menu.info")
+        case .delete: return String(localized: "context_menu.delete")
         }
     }
 

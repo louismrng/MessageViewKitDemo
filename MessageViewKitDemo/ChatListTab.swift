@@ -22,7 +22,7 @@ struct ChatListTab: View {
                 .navigationDestination(for: String.self) { threadId in
                     ConversationView(
                         threadId: threadId,
-                        threadName: dataProvider.threads.first(where: { $0.uniqueId == threadId })?.displayName ?? "Chat",
+                        threadName: dataProvider.threads.first(where: { $0.uniqueId == threadId })?.displayName ?? String(localized: "common.chat"),
                         dataProvider: dataProvider
                     )
                     .onAppear {
@@ -43,7 +43,7 @@ struct ChatListTab: View {
         ChatListView(viewModel: viewModel)
             .chatListStyle(.default)
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .automatic))
-            .navigationTitle("Messages")
+            .navigationTitle("chat_list.title")
             .navigationBarTitleDisplayMode(.automatic)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {

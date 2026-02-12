@@ -60,7 +60,7 @@ public struct InputToolbar: View {
     // MARK: - Subviews
 
     private var textField: some View {
-        TextField("Message", text: $text, axis: .vertical)
+        TextField("conversation.input_placeholder", text: $text, axis: .vertical)
             .textFieldStyle(.plain)
             .padding(.horizontal, 12)
             .padding(.vertical, 8)

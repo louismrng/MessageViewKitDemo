@@ -13,15 +13,16 @@ import SwiftUI
 public struct SectionHeader: View {
     @Environment(\.chatListStyle) private var style
 
-    let title: String
+    let title: LocalizedStringKey
 
-    public init(title: String) {
+    public init(title: LocalizedStringKey) {
         self.title = title
     }
 
     public var body: some View {
         HStack {
-            Text(title.uppercased())
+            Text(title)
+                .textCase(.uppercase)
                 .font(.caption)
                 .fontWeight(.semibold)
                 .foregroundColor(style.secondaryTextColor)
@@ -41,12 +42,12 @@ public struct SectionHeader: View {
 public extension SectionHeader {
     /// Header for the pinned section
     static var pinned: SectionHeader {
-        SectionHeader(title: "Pinned")
+        SectionHeader(title: "chat_list.section.pinned")
     }
 
     /// Header for the chats section
     static var chats: SectionHeader {
-        SectionHeader(title: "Chats")
+        SectionHeader(title: "chat_list.section.chats")
     }
 }
 

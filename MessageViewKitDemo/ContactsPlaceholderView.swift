@@ -17,17 +17,17 @@ struct ContactsPlaceholderView: View {
                     .font(.system(size: 48))
                     .foregroundColor(.secondary)
 
-                Text("Contacts")
+                Text("tab.contacts")
                     .font(.title2)
                     .foregroundColor(.primary)
 
-                Text("Coming Soon")
+                Text("placeholder.coming_soon")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(uiColor: .systemBackground))
-            .navigationTitle("Contacts")
+            .navigationTitle("tab.contacts")
         }
     }
 }

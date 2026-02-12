@@ -87,9 +87,9 @@ public struct ChatListView: View {
             viewModel.onToggleMuteThread?(thread.id)
         } label: {
             if thread.isMuted {
-                Label("Unmute", systemImage: "bell")
+                Label("chat_list.action.unmute", systemImage: "bell")
             } else {
-                Label("Mute", systemImage: "bell.slash")
+                Label("chat_list.action.mute", systemImage: "bell.slash")
             }
         }
 
@@ -97,22 +97,22 @@ public struct ChatListView: View {
             viewModel.onToggleReadThread?(thread.id)
         } label: {
             if thread.hasUnreadMessages {
-                Label("Mark as Read", systemImage: "envelope.open")
+                Label("chat_list.action.mark_as_read", systemImage: "envelope.open")
             } else {
-                Label("Mark as Unread", systemImage: "envelope.badge")
+                Label("chat_list.action.mark_as_unread", systemImage: "envelope.badge")
             }
         }
 
         Button {
             viewModel.onArchiveThread?(thread.id)
         } label: {
-            Label("Archive", systemImage: "archivebox")
+            Label("chat_list.action.archive", systemImage: "archivebox")
         }
 
         Button(role: .destructive) {
             viewModel.onDeleteThread?(thread.id)
         } label: {
-            Label("Delete", systemImage: "trash")
+            Label("chat_list.action.delete", systemImage: "trash")
         }
     }
 

@@ -12,7 +12,7 @@ struct SettingsTabView: View {
     var body: some View {
         NavigationStack {
             SettingsView()
-                .navigationTitle("Settings")
+                .navigationTitle("tab.settings")
                 .navigationBarTitleDisplayMode(.large)
         }
     }

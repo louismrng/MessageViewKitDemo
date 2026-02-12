@@ -38,9 +38,9 @@ public struct DateHeader: View {
         let calendar = Calendar.current
 
         if calendar.isDateInToday(date) {
-            return "Today"
+            return String(localized: "conversation.date.today")
         } else if calendar.isDateInYesterday(date) {
-            return "Yesterday"
+            return String(localized: "conversation.date.yesterday")
         } else {
             let formatter = DateFormatter()
             formatter.dateStyle = .medium

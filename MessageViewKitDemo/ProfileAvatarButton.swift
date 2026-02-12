@@ -24,12 +24,12 @@ struct ProfileAvatarButton: View {
                 .fill(Color.blue)
                 .frame(width: size, height: size)
                 .overlay(
-                    Text("ME")
+                    Text("profile.initials")
                         .font(.system(size: size * 0.4, weight: .medium))
                         .foregroundColor(.white)
                 )
         }
-        .accessibilityLabel("Settings")
+        .accessibilityLabel("profile.settings_label")
     }
 }
 

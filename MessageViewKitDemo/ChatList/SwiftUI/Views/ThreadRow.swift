@@ -109,9 +109,9 @@ public struct ThreadRowContent: View {
 
     private var displayName: String {
         if thread.isNoteToSelf {
-            return "Note to Self"
+            return String(localized: "thread.note_to_self")
         }
-        return thread.displayName.isEmpty ? "New Group" : thread.displayName
+        return thread.displayName.isEmpty ? String(localized: "thread.new_group") : thread.displayName
     }
 
     private var shouldShowMuteIndicator: Bool {
@@ -151,21 +151,21 @@ public struct ThreadRowContent: View {
         if let snippet = thread.lastMessageSnippet {
             switch snippet {
             case .blocked:
-                Text("Blocked conversation")
+                Text("thread.snippet.blocked")
                     .italic()
 
             case .pendingMessageRequest(let addedBy):
                 if let addedBy = addedBy {
-                    Text("Added to group by \(addedBy)")
+                    Text("thread.snippet.added_to_group \(addedBy)")
                 } else {
-                    Text("Message request")
+                    Text("thread.snippet.message_request")
                 }
 
             case .draft(let text):
-                (Text("Draft: ").italic() + Text(text))
+                (Text("thread.snippet.draft_prefix").italic() + Text(text))
 
             case .voiceMemoDraft:
-                (Text("Draft: ").italic() + Text("Voice Message"))
+                (Text("thread.snippet.draft_prefix").italic() + Text("thread.snippet.voice_message"))
 
             case .message(let text):
                 Text(text)
@@ -205,7 +205,7 @@ public struct ThreadRowContent: View {
         if calendar.isDateInToday(date) {
             return formatTime(date)
         } else if calendar.isDateInYesterday(date) {
-            return "Yesterday"
+            return String(localized: "thread.date.yesterday")
         } else if let daysAgo = calendar.dateComponents([.day], from: date, to: Date()).day, daysAgo < 7 {
             return formatWeekday(date)
         } else {

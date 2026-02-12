@@ -48,23 +48,23 @@ struct ComposeView: View {
             }
         }
         .listStyle(.plain)
-        .searchable(text: $searchText, prompt: "Search contacts...")
-        .navigationTitle("New Message")
+        .searchable(text: $searchText, prompt: "compose.search_prompt")
+        .navigationTitle("compose.title")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
+                Button("common.cancel") {
                     dismiss()
                 }
             }
         }
-        .alert("Start Conversation", isPresented: $showingConfirmation) {
-            Button("Cancel", role: .cancel) { }
-            Button("Start") {
+        .alert("compose.start_conversation", isPresented: $showingConfirmation) {
+            Button("common.cancel", role: .cancel) { }
+            Button("common.start") {
                 dismiss()
             }
         } message: {
-            Text("Would you like to start a conversation with \(selectedContact ?? "")?")
+            Text("compose.start_conversation_prompt \(selectedContact ?? "")")
         }
     }
 }

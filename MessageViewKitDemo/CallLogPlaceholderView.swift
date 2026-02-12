@@ -17,17 +17,17 @@ struct CallLogPlaceholderView: View {
                     .font(.system(size: 48))
                     .foregroundColor(.secondary)
 
-                Text("Call Log")
+                Text("tab.call_log")
                     .font(.title2)
                     .foregroundColor(.primary)
 
-                Text("Coming Soon")
+                Text("placeholder.coming_soon")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(uiColor: .systemBackground))
-            .navigationTitle("Call Log")
+            .navigationTitle("tab.call_log")
         }
     }
 }

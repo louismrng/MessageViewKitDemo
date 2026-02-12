@@ -22,47 +22,47 @@ struct MainTabView: View {
             ChatListTab(dataProvider: dataProvider)
                 .tag(Tab.messages)
                 .tabItem {
-                    Label("Messages", systemImage: "message")
+                    Label("tab.messages", systemImage: "message")
                 }
 
             NavigationStack {
                 ContactsPlaceholderView()
-                    .navigationTitle("Contacts")
+                    .navigationTitle("tab.contacts")
                     .navigationBarTitleDisplayMode(.inline)
             }
             .tag(Tab.contacts)
             .tabItem {
-                Label("Contacts", systemImage: "person.2")
+                Label("tab.contacts", systemImage: "person.2")
             }
 
             NavigationStack {
                 CallLogPlaceholderView()
-                    .navigationTitle("Call Log")
+                    .navigationTitle("tab.call_log")
                     .navigationBarTitleDisplayMode(.inline)
             }
             .tag(Tab.callLog)
             .tabItem {
-                Label("Call Log", systemImage: "phone.arrow.up.right")
+                Label("tab.call_log", systemImage: "phone.arrow.up.right")
             }
 
             NavigationStack {
                 StoragePlaceholderView()
-                    .navigationTitle("Storage")
+                    .navigationTitle("tab.storage")
                     .navigationBarTitleDisplayMode(.inline)
             }
             .tag(Tab.storage)
             .tabItem {
-                Label("Storage", systemImage: "externaldrive")
+                Label("tab.storage", systemImage: "externaldrive")
             }
 
             NavigationStack {
                 SettingsTabView()
-                    .navigationTitle("Settings")
+                    .navigationTitle("tab.settings")
                     .navigationBarTitleDisplayMode(.inline)
             }
             .tag(Tab.settings)
             .tabItem {
-                Label("Settings", systemImage: "gear")
+                Label("tab.settings", systemImage: "gear")
             }
         }
         .onAppear {
@@ -75,4 +75,9 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
+}
+
+#Preview("Arabic RTL") {
+    MainTabView()
+        .arabicPreview()
 }
