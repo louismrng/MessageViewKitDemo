@@ -88,3 +88,17 @@ public struct EmptyInboxView: View {
     }
     .chatListStyle(.default)
 }
+
+#Preview("Arabic RTL") {
+    EmptyInboxView()
+        .chatListStyle(.default)
+        .arabicPreview()
+}
+
+#Preview("Arabic RTL - Filtered") {
+    EmptyInboxView(isFiltered: true) {
+        print("Clear filter tapped")
+    }
+    .chatListStyle(.default)
+    .arabicPreview()
+}

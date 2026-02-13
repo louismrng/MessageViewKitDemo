@@ -25,6 +25,8 @@
 		B1000021001 /* ReactionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000021000 /* ReactionPicker.swift */; };
 		B1000022001 /* ReactionBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000022000 /* ReactionBadge.swift */; };
 		B1000023001 /* ReactionDetailsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000023000 /* ReactionDetailsSheet.swift */; };
+		BFC305542F3EF7E2005700F0 /* PreviewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC305532F3EF7E2005700F0 /* PreviewHelpers.swift */; };
+		BFC305552F3EF7E2005700F0 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = BFC305522F3EF7E2005700F0 /* Localizable.xcstrings */; };
 		BFFC682F2F28B47C0087261B /* ContextMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC682E2F28B47C0087261B /* ContextMenuAction.swift */; };
 		BFFC68332F28B4880087261B /* EmojiKeyboardPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC68322F28B4880087261B /* EmojiKeyboardPicker.swift */; };
 		BFFC68342F28B4880087261B /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFC68302F28B4880087261B /* ContextMenu.swift */; };
@@ -73,6 +75,8 @@
 		B1000021000 /* ReactionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionPicker.swift; sourceTree = "<group>"; };
 		B1000022000 /* ReactionBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionBadge.swift; sourceTree = "<group>"; };
 		B1000023000 /* ReactionDetailsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionDetailsSheet.swift; sourceTree = "<group>"; };
+		BFC305522F3EF7E2005700F0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		BFC305532F3EF7E2005700F0 /* PreviewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHelpers.swift; sourceTree = "<group>"; };
 		BFFC682E2F28B47C0087261B /* ContextMenuAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuAction.swift; sourceTree = "<group>"; };
 		BFFC68302F28B4880087261B /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
 		BFFC68312F28B4880087261B /* ContextMenuOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuOverlay.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 		A1000012000 /* MessageViewKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BFC305522F3EF7E2005700F0 /* Localizable.xcstrings */,
+				BFC305532F3EF7E2005700F0 /* PreviewHelpers.swift */,
 				E1000001000 /* MessageViewKitDemoApp.swift */,
 				A1000003000 /* MockDataProvider.swift */,
 				E1000002000 /* ConversationView.swift */,
@@ -334,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC305552F3EF7E2005700F0 /* Localizable.xcstrings in Resources */,
 				A1000009001 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +373,7 @@
 				B1000011001 /* DateHeader.swift in Sources */,
 				B1000012001 /* TypingIndicator.swift in Sources */,
 				B1000020001 /* Reaction.swift in Sources */,
+				BFC305542F3EF7E2005700F0 /* PreviewHelpers.swift in Sources */,
 				B1000021001 /* ReactionPicker.swift in Sources */,
 				B1000022001 /* ReactionBadge.swift in Sources */,
 				B1000023001 /* ReactionDetailsSheet.swift in Sources */,
@@ -400,7 +408,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9TT692DPU8;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MessageViewKitDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -429,7 +437,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9TT692DPU8;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MessageViewKitDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

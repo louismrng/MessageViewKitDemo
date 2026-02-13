@@ -158,3 +158,14 @@ private struct PreiOS26TabBarHiddenModifier: ViewModifier {
         )
     }
 }
+
+#Preview("Arabic RTL") {
+    NavigationStack {
+        ConversationView(
+            threadId: "preview",
+            threadName: "Alice",
+            dataProvider: MockDataProvider()
+        )
+    }
+    .arabicPreview()
+}

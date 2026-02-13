@@ -35,3 +35,8 @@ struct ContactsPlaceholderView: View {
 #Preview {
     ContactsPlaceholderView()
 }
+
+#Preview("Arabic RTL") {
+    ContactsPlaceholderView()
+        .arabicPreview()
+}

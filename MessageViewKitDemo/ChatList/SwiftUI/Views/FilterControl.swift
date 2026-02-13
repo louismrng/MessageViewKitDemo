@@ -79,3 +79,21 @@ public struct FilterControl: View {
 
     return PreviewWrapper()
 }
+
+#Preview("Arabic RTL") {
+    struct PreviewWrapper: View {
+        @State private var filterMode: FilterMode = .none
+
+        var body: some View {
+            VStack {
+                FilterControl(filterMode: $filterMode, unreadCount: 5)
+                Text("Current filter: \(filterMode == .none ? "All" : "Unread")")
+                    .padding()
+            }
+            .chatListStyle(.default)
+            .arabicPreview()
+        }
+    }
+
+    return PreviewWrapper()
+}

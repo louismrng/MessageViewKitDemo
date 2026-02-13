@@ -35,3 +35,8 @@ struct CallLogPlaceholderView: View {
 #Preview {
     CallLogPlaceholderView()
 }
+
+#Preview("Arabic RTL") {
+    CallLogPlaceholderView()
+        .arabicPreview()
+}

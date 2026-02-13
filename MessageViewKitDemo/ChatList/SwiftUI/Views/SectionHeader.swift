@@ -67,3 +67,19 @@ public extension SectionHeader {
     }
     .chatListStyle(.default)
 }
+
+#Preview("Arabic RTL") {
+    VStack(spacing: 0) {
+        SectionHeader.pinned
+        Rectangle()
+            .fill(Color.gray.opacity(0.2))
+            .frame(height: 60)
+
+        SectionHeader.chats
+        Rectangle()
+            .fill(Color.gray.opacity(0.2))
+            .frame(height: 120)
+    }
+    .chatListStyle(.default)
+    .arabicPreview()
+}

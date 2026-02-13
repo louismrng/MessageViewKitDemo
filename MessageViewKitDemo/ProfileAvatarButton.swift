@@ -36,3 +36,8 @@ struct ProfileAvatarButton: View {
 #Preview {
     ProfileAvatarButton(action: {})
 }
+
+#Preview("Arabic RTL") {
+    ProfileAvatarButton(action: {})
+        .arabicPreview()
+}

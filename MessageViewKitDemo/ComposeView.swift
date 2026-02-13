@@ -74,3 +74,10 @@ struct ComposeView: View {
         ComposeView()
     }
 }
+
+#Preview("Arabic RTL") {
+    NavigationStack {
+        ComposeView()
+    }
+    .arabicPreview()
+}

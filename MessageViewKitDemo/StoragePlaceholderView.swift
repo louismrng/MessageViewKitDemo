@@ -35,3 +35,8 @@ struct StoragePlaceholderView: View {
 #Preview {
     StoragePlaceholderView()
 }
+
+#Preview("Arabic RTL") {
+    StoragePlaceholderView()
+        .arabicPreview()
+}

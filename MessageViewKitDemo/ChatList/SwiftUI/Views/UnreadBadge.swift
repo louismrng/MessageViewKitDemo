@@ -76,3 +76,22 @@ public struct UnreadBadge: View {
     .padding()
     .chatListStyle(.default)
 }
+
+#Preview("Arabic RTL") {
+    VStack(spacing: 16) {
+        HStack(spacing: 16) {
+            UnreadBadge(count: 1)
+            UnreadBadge(count: 9)
+            UnreadBadge(count: 42)
+            UnreadBadge(count: 999)
+            UnreadBadge(count: 1500)
+        }
+
+        HStack(spacing: 16) {
+            UnreadBadge(count: 0)
+        }
+    }
+    .padding()
+    .chatListStyle(.default)
+    .arabicPreview()
+}

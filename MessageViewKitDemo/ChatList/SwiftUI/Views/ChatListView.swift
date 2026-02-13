@@ -179,3 +179,43 @@ public struct ChatListView: View {
     ChatListView(viewModel: viewModel)
         .chatListStyle(.default)
 }
+
+#Preview("Arabic RTL") {
+    let viewModel = ChatListViewModel()
+
+    let mockThreads: [MockThread] = [
+        MockThread(
+            displayName: "Alice",
+            isPinned: false,
+            hasUnreadMessages: true,
+            unreadCount: 2,
+            lastMessageDate: Date(),
+            lastMessageSnippet: .message(text: "Hey! How are you?")
+        ),
+        MockThread(
+            displayName: "Work Group",
+            isGroup: true,
+            isPinned: false,
+            isMuted: true,
+            lastMessageDate: Date().addingTimeInterval(-1800),
+            lastMessageSnippet: .groupMessage(text: "Meeting at 3pm", senderName: "Bob"),
+            lastMessageStatus: .delivered
+        ),
+        MockThread(
+            displayName: "Bob",
+            lastMessageDate: Date().addingTimeInterval(-3600),
+            lastMessageSnippet: .message(text: "See you tomorrow!"),
+            lastMessageStatus: .read
+        ),
+    ]
+
+    viewModel.setThreads(mockThreads)
+
+    return NavigationStack {
+        ChatListView(viewModel: viewModel)
+            .navigationTitle("chat_list.title")
+            .navigationBarTitleDisplayMode(.large)
+    }
+    .chatListStyle(.default)
+    .arabicPreview()
+}

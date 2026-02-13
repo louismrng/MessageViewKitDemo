@@ -108,3 +108,8 @@ private struct iOS26TabBarModifier: ViewModifier {
 #Preview {
     ChatListTab(dataProvider: MockDataProvider())
 }
+
+#Preview("Arabic RTL") {
+    ChatListTab(dataProvider: MockDataProvider())
+        .arabicPreview()
+}

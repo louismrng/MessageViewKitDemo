@@ -21,3 +21,8 @@ struct SettingsTabView: View {
 #Preview {
     SettingsTabView()
 }
+
+#Preview("Arabic RTL") {
+    SettingsTabView()
+        .arabicPreview()
+}

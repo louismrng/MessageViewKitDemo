@@ -302,3 +302,44 @@ struct ThreadTypingIndicator: View {
     }
     .chatListStyle(.default)
 }
+
+#Preview("Arabic RTL") {
+    VStack(spacing: 0) {
+        ThreadRowContent(
+            thread: AnyThread(MockThread(
+                displayName: "Alice Johnson",
+                hasUnreadMessages: true,
+                unreadCount: 3,
+                lastMessageDate: Date(),
+                lastMessageSnippet: .message(text: "Hey, are you coming to the party tonight?")
+            ))
+        )
+
+        Divider()
+
+        ThreadRowContent(
+            thread: AnyThread(MockThread(
+                displayName: "Work Group",
+                isGroup: true,
+                isMuted: true,
+                lastMessageDate: Date().addingTimeInterval(-3600),
+                lastMessageSnippet: .groupMessage(text: "Meeting at 3pm", senderName: "Bob"),
+                lastMessageStatus: .delivered
+            ))
+        )
+
+        Divider()
+
+        ThreadRowContent(
+            thread: AnyThread(MockThread(
+                displayName: "Note to Self",
+                lastMessageDate: Date().addingTimeInterval(-86400),
+                lastMessageSnippet: .draft(text: "Remember to buy milk"),
+                lastMessageStatus: nil,
+                isNoteToSelf: true
+            ))
+        )
+    }
+    .chatListStyle(.default)
+    .arabicPreview()
+}
